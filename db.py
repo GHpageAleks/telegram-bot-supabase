@@ -4,10 +4,11 @@ from supabase import create_client, Client
 
 # Получаем переменные из .env
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
-# Создаем клиента Supabase
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
+# Создаем клиента Supabase с сервисным ключом
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+
 
 async def init_db():
     # Создаем таблицу, если ее нет
