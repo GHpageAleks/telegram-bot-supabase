@@ -6,6 +6,9 @@ from supabase import create_client, Client
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
+print("DEBUG: SUPABASE_URL =", SUPABASE_URL)
+print("DEBUG: SUPABASE_SERVICE_ROLE_KEY =", SUPABASE_SERVICE_ROLE_KEY)
+
 # Создаем клиента Supabase с сервисным ключом
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
