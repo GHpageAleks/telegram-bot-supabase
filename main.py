@@ -1,3 +1,14 @@
+from datetime import datetime, time
+import sys
+
+def is_sleep_time():
+    now = datetime.now().time()
+    return time(0, 0) <= now < time(8, 0)  # С 00:00 до 08:00
+
+if is_sleep_time():
+    print("⏸️ Сейчас ночное время. Бот не запускается.")
+    sys.exit()
+
 import asyncio
 import logging
 import os
